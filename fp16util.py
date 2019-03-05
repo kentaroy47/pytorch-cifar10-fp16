@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-
+# codes from https://github.com/fastai/imagenet-fast/tree/master/cifar10
 
 class tofp16(nn.Module):
     def __init__(self):
