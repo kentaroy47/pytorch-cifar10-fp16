@@ -1,5 +1,6 @@
 # pytorch-cifar10-fp16
 Train with FP16, let's see if you get faster training.
+Thanks FastAI for the pytorchFP16 training util codes.
 
 FP16@res18.. 10sec/epoch
 
