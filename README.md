@@ -1,12 +1,27 @@
-# pytorch-cifar10-fp16
+# Training Cifar-10 with FP16 (half) precision @Pytorch
 Train with FP16, let's see if you get faster training.
+
 Thanks FastAI for the pytorchFP16 training util codes.
 
+Tensorcoreを使うことで演算速度がFP32に対する大幅な高速化が（スペック的に）期待できる。
+
+どれくらい早くなるか、Pytorchでどう書けばFP16が使えるかなど記述する。
+
+## Qiita article
+https://qiita.com/arutema47/items/d9e097f00b0b4934d07a
+
+こちらにより詳しい解説があります。
+
+## Training speed with FP16 and FP32
 FP16@res18.. 10sec/epoch
 
 FP32@res18.. 15sec/epoch
 
 with RTX2080ti.
+
+Note that Ampere cores are required for efficient FP16 training.
+
+TensorCores are used to boost up the training speed!!
 
 ## Usage
 
