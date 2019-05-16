@@ -26,12 +26,15 @@ parser.add_argument('--resume', '-r', action='store_true', help='resume from che
 parser.add_argument('--net', default='res18')
 parser.add_argument('--fp16', action='store_true')
 parser.add_argument('--epoch', default=50, type=int, help='learning rate')
-
+parser.add_argument('--bs', default=128, type=int, help='batchsize')
 args = parser.parse_args()
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 best_acc = 0  # best test accuracy
 start_epoch = 0  # start from epoch 0 or last checkpoint epoch
+
+# you might need to change lr along with bs for good accuracy.
+bs = int(args.bs)
 
 # Data
 print('==> Preparing data..')
@@ -48,7 +51,7 @@ transform_test = transforms.Compose([
 ])
 
 trainset = torchvision.datasets.CIFAR10(root='./data', train=True, download=True, transform=transform_train)
-trainloader = torch.utils.data.DataLoader(trainset, batch_size=128, shuffle=True, num_workers=8)
+trainloader = torch.utils.data.DataLoader(trainset, batch_size=bs, shuffle=True, num_workers=8)
 
 testset = torchvision.datasets.CIFAR10(root='./data', train=False, download=True, transform=transform_test)
 testloader = torch.utils.data.DataLoader(testset, batch_size=100, shuffle=False, num_workers=8)
