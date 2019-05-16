@@ -13,7 +13,9 @@ https://qiita.com/arutema47/items/d9e097f00b0b4934d07a
 こちらにより詳しい解説があります。
 
 ## Training speed with FP16 and FP32
-FP16@res18.. 10sec/epoch
+FP16@res18.. 10sec/epoch batch = 128
+
+FP16@res18.. 8sec/epoch batch = 512
 
 FP32@res18.. 15sec/epoch
 
