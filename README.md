@@ -32,7 +32,7 @@ almost 2x speed up.
 
 FP16@res50.. 27sec/epoch batch = 512
 
-FP32@res50.. 61sec/epoch batch = 512
+FP32@res50.. 58sec/epoch batch = 512
 
 2x speed up.
 
