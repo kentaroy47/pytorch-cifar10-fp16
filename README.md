@@ -23,6 +23,8 @@ with RTX2080ti.
 
 Note that Ampere cores are required for efficient FP16 training.
 
+You should play around with minibatch size for best performance.
+
 TensorCores are used to boost up the training speed!!
 
 ## Usage
@@ -37,7 +39,7 @@ python train_cifar10.py --fp16 # for fp16 training
 python train_cifar10.py # for fp32 training
 
 # train by resnet50
-python train_cifar10.py --fp16 --arch res50 # for fp16 training
-python train_cifar10.py --arch res50 # for fp32 training
+python train_cifar10.py --fp16 --net res50 # for fp16 training
+python train_cifar10.py --net res50 # for fp32 training
 
 ```
