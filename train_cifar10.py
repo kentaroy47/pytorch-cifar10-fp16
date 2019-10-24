@@ -23,7 +23,7 @@ torch.backends.cudnn.benchmark = False
 parser = argparse.ArgumentParser(description='PyTorch CIFAR10 Training')
 parser.add_argument('--lr', default=0.1, type=float, help='learning rate')
 parser.add_argument('--resume', '-r', action='store_true', help='resume from checkpoint')
-parser.add_argument('--net', default='res18')
+parser.add_argument('--net', default='res18', help='choose from res18(def), res34, res50, vgg, densenet, mobilenet, shufflenet, efficientnet, resnext')
 parser.add_argument('--fp16', action='store_true')
 parser.add_argument('--epoch', default=50, type=int, help='learning rate')
 parser.add_argument('--bs', default=128, type=int, help='batchsize')
@@ -73,12 +73,20 @@ elif args.net=='res101':
     net = ResNet101()
 # net = PreActResNet18()
 # net = GoogLeNet()
-# net = DenseNet121()
-# net = ResNeXt29_2x64d()
+elif args.net=='densenet': 
+    net = DenseNet121()
+elif args.net=='resnext':
+    net = ResNeXt29_2x64d()
 # net = MobileNet()
-# net = MobileNetV2()
+elif args.net=='mobilenet': 
+    net = MobileNetV2()
 # net = DPN92()
-# net = ShuffleNetG2()
+elif args.net=='shufflenet':
+    net = ShuffleNetv2()
+elif args.net=='efficientnet':
+    net = Efficientnet()
+else:
+    print("{} not found").format(args.net)
 # net = SENet18()
 net = net.to(device)
 
