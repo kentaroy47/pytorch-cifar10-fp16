@@ -76,7 +76,7 @@ elif args.net=='res101':
 elif args.net=='densenet': 
     net = DenseNet121()
 elif args.net=='resnext':
-    net = ResNeXt29_2x64d()
+    net = ResNeXt29_4x64d()
 # net = MobileNet()
 elif args.net=='mobilenet': 
     net = MobileNetV2()
